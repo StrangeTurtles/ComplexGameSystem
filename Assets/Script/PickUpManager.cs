@@ -8,9 +8,12 @@ using Com.MyCompany.MyGame;
 /// </summary>
 public class PickUpManager : MonoBehaviour
 {
+    #region private fields
     private PickUp pickUp;
     private PlayerManager target;
     private Animator animator;
+    #endregion
+    #region MonoBehaviour Callbacks
     // Start is called before the first frame update
     void Start()
     {
@@ -55,4 +58,5 @@ public class PickUpManager : MonoBehaviour
             other.GetComponent<PickUp>().Used = true;
         }
     }
+    #endregion
 }

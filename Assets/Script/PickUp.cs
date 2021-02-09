@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    #region public fields
     public enum PICKUPTYPE
     {
         HEALTH,
@@ -15,6 +16,8 @@ public class PickUp : MonoBehaviour
     public PICKUPTYPE myType = PICKUPTYPE.HEALTH;
     [HideInInspector]
     public bool Used = false;
+    #endregion
+    #region MonoBehaviour Callbacks
     // Start is called before the first frame update
     void Start()
     {
@@ -29,4 +32,5 @@ public class PickUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    #endregion
 }
