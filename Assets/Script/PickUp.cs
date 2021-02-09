@@ -26,7 +26,7 @@ public class PickUp : MonoBehaviour
     {
         if(Used)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }

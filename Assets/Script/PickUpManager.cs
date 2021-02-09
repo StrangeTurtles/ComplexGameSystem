@@ -15,6 +15,7 @@ public class PickUpManager : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        target = GetComponent<PlayerManager>();
         if (!animator)
         {
             //Debug.LogError("PlayerAnimatorManager is Missing Animator Component", this);

@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 579496519675816458}
   - component: {fileID: 579496519675816459}
   - component: {fileID: 4813501782426757991}
+  - component: {fileID: 8649471286444701925}
   m_Layer: 5
   m_Name: Player UI
   m_TagString: Untagged
@@ -394,6 +395,21 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &8649471286444701925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579496519675816461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fee3c389fc21cc4c810e48a7b0380b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenOffset: {x: 0, y: 30, z: 0}
+  playerNameText: {fileID: 579496520456099978}
+  playerHealthSlider: {fileID: 579496519675816459}
 --- !u!1 &579496520456099980
 GameObject:
   m_ObjectHideFlags: 0

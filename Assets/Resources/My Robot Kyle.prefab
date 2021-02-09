@@ -103,7 +103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1344338076}
   m_LocalRotation: {x: -0.5511754, y: 0.44295105, z: 0.5511754, w: 0.44295105}
-  m_LocalPosition: {x: -0.062, y: 0.116, z: 0}
+  m_LocalPosition: {x: -0.13, y: 0.426, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1988229790}
@@ -1773,7 +1773,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68ef81e8272e394b9756d32008fab2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerUiPrefab: {fileID: 0}
+  PlayerUiPrefab: {fileID: 579496519675816461, guid: 29c1f9c769dcf0d4a8741310f49ebf6a,
+    type: 3}
   Health: 1
   beams: {fileID: 1344338076}
   FiringActived: 0
