@@ -27,8 +27,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if(Nodes != null)
         {
-            //Nodes[currentNode]
-            if(gameObject.transform.position  == Nodes[currentNode].position)
+            if ((gameObject.transform.position - Nodes[currentNode].position).sqrMagnitude < .5f)
             {
                 currentNode++;
                 if(currentNode >= Nodes.Count)
@@ -39,7 +38,7 @@ public class MovingPlatform : MonoBehaviour
             else
             {
                 movement = Nodes[currentNode].position - gameObject.transform.position;
-                //transform.position += movement * (speed * Time.deltaTime);
+                movement = movement.normalized;
                 transform.Translate(movement * (speed * Time.deltaTime));
             }
         }
