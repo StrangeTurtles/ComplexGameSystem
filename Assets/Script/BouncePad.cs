@@ -5,6 +5,8 @@ using UnityEngine;
 public class BouncePad : MonoBehaviour
 {
     public Vector3 movement;
+    public float length = 14;
+    public float speed = 1;
     private Transform otherTransform;
     #region MonoBehaviour Callbacks
     // Start is called before the first frame update
@@ -20,8 +22,7 @@ public class BouncePad : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        otherTransform = other.gameObject.transform;
-        Debug.Log("Hit");
+        other.transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * speed, 14) , transform.position.z);
     }
     #endregion
 }
