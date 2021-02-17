@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BounceSelf : MonoBehaviour
 {
-    public float length = .1f;
-    public float speed = 15;
+    public float length = .3f;
+    public int height = 5;
     private Vector3 moveDirection;
     #region MonoBehaviour Callbacks
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class BounceSelf : MonoBehaviour
             
             {
                 Debug.Log("Bouncy Hit");
-                moveDirection.y = speed;
+                moveDirection.y = height;
             }
         }
         moveDirection.y -= 9.8f * Time.deltaTime;
