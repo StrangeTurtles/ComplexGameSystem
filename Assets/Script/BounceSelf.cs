@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BounceSelf : MonoBehaviour
 {
-    public float length = 14;
-    public float speed = 5;
+    public float length = .1f;
+    public float speed = 15;
+    private Vector3 moveDirection;
     #region MonoBehaviour Callbacks
     // Start is called before the first frame update
     void Start()
@@ -17,12 +18,19 @@ public class BounceSelf : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 5, Color.red);
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, length) && hit.transform.gameObject.tag == "Bouncy")
-        {
-            Debug.Log("hit");
-            transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * speed, length), transform.position.z);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * length, Color.red);
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, length))
+        { 
+            if (hit.transform.gameObject.tag == "Bouncy")
+            
+            {
+                Debug.Log("Bouncy Hit");
+                moveDirection.y = speed;
+            }
         }
+        moveDirection.y -= 9.8f * Time.deltaTime;
+        GetComponent<CharacterController>().Move(moveDirection * Time.deltaTime);
+
     }
     #endregion
 }
