@@ -108,6 +108,10 @@ void OnLevelWasLoaded(int level)
             {
                 PlayerManager.LocalPlayerInstance = this.gameObject;
             }
+            else
+            {
+                StartCoroutine(ResetTransformView());
+            }
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
@@ -246,6 +250,18 @@ void OnLevelWasLoaded(int level)
                     IsFiring = false;
                 }
             }
+        }
+
+        IEnumerator ResetTransformView()
+        {
+            Debug.LogWarning("PUN Bug? - Resetting the PUN Transform View after a frame to fix desync issues.");
+            var punTRS = GetComponent<PhotonTransformView>();
+            punTRS.enabled = false;
+
+            //Wait Until The Next Frame
+            yield return null;
+
+            punTRS.enabled = true;
         }
 
         #endregion
