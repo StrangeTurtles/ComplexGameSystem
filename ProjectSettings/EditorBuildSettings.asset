@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Room for 4.unity
     guid: 4ffae7db7d147cf4ea3be4b26c7547c5
+  - enabled: 1
+    path: Assets/Scenes/Winner.unity
+    guid: c64cc40f612668d41bb23e53e932184a
+  - enabled: 1
+    path: Assets/Scenes/Loser.unity
+    guid: 1cbcf2edf316cd9489d4fc9018c907af
   m_configObjects: {}

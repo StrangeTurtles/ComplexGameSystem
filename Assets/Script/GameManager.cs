@@ -19,6 +19,8 @@ namespace Com.MyCompany.MyGame
         public static GameManager Instance;
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
+        [HideInInspector]
+        public bool Winner = false;
 
         #endregion
         #region Private Methods
@@ -74,7 +76,15 @@ namespace Com.MyCompany.MyGame
         /// </summary>
         public override void OnLeftRoom()
         {
-            SceneManager.LoadScene(0);
+            //SceneManager.LoadScene(0);
+            if (Winner)
+            {
+                SceneManager.LoadScene(5);
+            }
+            else
+            {
+                SceneManager.LoadScene(6);
+            }
         }
 
 

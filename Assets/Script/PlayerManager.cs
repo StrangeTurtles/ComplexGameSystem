@@ -120,7 +120,6 @@ void OnLevelWasLoaded(int level)
         {
             CameraWork _cameraWork = this.gameObject.GetComponent<CameraWork>();
 
-
             if (_cameraWork != null)
             {
                 if (photonView.IsMine)
