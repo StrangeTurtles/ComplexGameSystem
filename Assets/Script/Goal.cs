@@ -27,10 +27,10 @@ public class Goal : MonoBehaviour
         if(other.GetComponent<PlayerManager>() != null)
         {
             gameManager.Winner = true;
-            RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All };
+            RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.Others };
             bool kick = true;
             PhotonNetwork.RaiseEvent(BootEveryOneEventCode,kick,raiseEventOptions, SendOptions.SendReliable);
-            //GameManager.Instance.LeaveRoom();
+            GameManager.Instance.LeaveRoom();
         }
 
     }
